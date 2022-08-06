@@ -1,3 +1,24 @@
-import webbrowser
-webbrowser.open('http://www.instagram.com//')
-input()
+import os
+from selenium import webdriver
+
+os.environ['PATH'] += r"C:\Users\alex\Downloads\chromedriver_win32"
+driver = webdriver.Chrome()
+
+#scroll button
+scroll = driver.find_element_by_id('downarrowkey')
+scroll.click()
+
+#follow cycle
+follow_button = driver.find_element_by_id('followbutton')
+follow_button.click()
+
+#like cycle
+like_button = driver.find_element_by_id('likebutton')
+like_button.click()
+
+#comment cycle
+comment = driver.find_element_by_id('commentbar')
+comment.input(" ")
+
+
+#placeholder wait function input()
